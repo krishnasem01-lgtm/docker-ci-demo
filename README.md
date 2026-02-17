@@ -7,15 +7,21 @@ Docker CI Integration and Docker Hub Push using GitHub Actions
 Integrate Docker with a GitHub Actions CI pipeline and automate building and pushing Docker images to Docker Hub.
 
 ## Objectives
-- Understand Docker and GitHub Actions integration.
-- Automate Docker image building using CI.
-- Push Docker images securely to Docker Hub.
-- Implement CI best practices using GitHub Actions.
+- To understand Docker and GitHub Actions integration.
+- To automate Docker image build using CI.
+- To push Docker images securely to Docker Hub.
+- To implement CI best practices using GitHub Actions.
 
 ## Problem Statement
-Manual Docker image building and deployment are time-consuming and error-prone. An automated CI pipeline is needed to build Docker images on every code change and publish them to Docker Hub.
+Manual Docker image building and deployment is time-consuming and error-prone. There is a need for an automated CI pipeline that builds Docker images on every code change and publishes them to Docker Hub.TheorDocker is a containerization platform that packages applications and their dependencies into lightweight containers. 
+GitHub Actions is a CI/CD tool provided by GitHub that automates workflows such as building, testing, and deployment. 
+Integrating Docker with GitHub Actions ensures automatic image build and push, improving software delivery speed and reliability.
 
-Docker is a containerization platform that packages applications and dependencies into lightweight containers. GitHub Actions is a CI/CD service that automates workflows such as build, test, and deployment. Integrating Docker with GitHub Actions improves delivery speed and reliability through automatic build and push.
+## Procedure 
+A project directory is created on the local system and a simple web application file is added inside it. A Dockerfile is then created using a base image such as Nginx, and the application files are copied into the container image. 
+The Git repository is initialized and the project files are committed to version control. A GitHub Actions workflow directory is created inside the repository, and a YAML workflow file is configured to automate the Docker build process. The workflow is designed to trigger on every push to the main branch. It checks out the source code, sets up the Docker build environment, and builds the Docker image using the Dockerfile present 
+in the repository.
+To enable pushing the image to Docker Hub, Docker Hub credentials are securely stored as GitHub repository secrets. The workflow logs in to Docker Hub using these secrets and then builds and pushes the Docker image with appropriate tags to the Docker Hub repository. Finally, the updated project is pushed to GitHub, triggering the CI pipeline automatically. The successful execution of the workflow confirms that the Docker image is built and published to Docker Hub.
 
 ---
 
